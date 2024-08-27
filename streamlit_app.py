@@ -63,7 +63,7 @@ if ingredients_list:
 
    st.write(f"Ingredients chosen: {ingredients_string.strip()}")
 
-    st.write(ingredients_string)
+   st.write(ingredients_string)
 
  
 
