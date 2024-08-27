@@ -31,6 +31,7 @@ pd_df = my_dataframe.to_pandas()
  # Optionally fetch orders that are not filled
 orders_df = session.table("smoothies.public.orders").filter(col("ORDER_FILLED") == 0).to_pandas()
 editable_df = st.data_editor(orders_df)
+st.dataframe(data=orders_df, use_container_width=True)
 
 
 #Convert the snowpark Dataframe to a Pandas Dataframe so we can use LOC function
