@@ -52,7 +52,7 @@ if ingredients_list:
     ingredients_string = ''
 
  
-
+if ingredients_list:
     for fruit_chosen in ingredients_list:
         ingredients_string += fruit_chosen + ' '
         search_on=pd_df.loc[pd_df['FRUIT_NAME'] == fruit_chosen, 'SEARCH_ON'].iloc[0]
@@ -61,11 +61,9 @@ if ingredients_list:
         fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_chosen, search_on)
         fv_df = st.dataframe(data=fruityvice_response.json(), use_container_width=True)
 
- 
+   st.write(f"Ingredients chosen: {ingredients_string.strip()}")
 
- 
-
-    #st.write(ingredients_string)
+    st.write(ingredients_string)
 
  
 
